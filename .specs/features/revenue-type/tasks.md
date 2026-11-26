@@ -287,14 +287,14 @@ to `RevenueTypeService` and mapping `RevenueTypeRequest` / `RevenueTypeResponse`
 
 **Done when**:
 
-- [ ] All 5 endpoints exist with the exact status codes from the spec's AC 1-12
-- [ ] Every endpoint has a passing unit test in `RevenueTypeControllerTest` (standalone MockMvc +
+- [x] All 5 endpoints exist with the exact status codes from the spec's AC 1-12
+- [x] Every endpoint has a passing unit test in `RevenueTypeControllerTest` (standalone MockMvc +
       Mockito-mocked service, no Spring context - same style as
       `DistributionMethodControllerTest`), with every `verify(...)` call using an explicit
       argument or an `ArgumentCaptor` - never `any()`
-- [ ] Test count: 13 tests pass (C1-C13 below; no silent deletions)
-- [ ] `./mvnw -q test -Dtest=RevenueTypeControllerTest` passes
-- [ ] `./mvnw -B verify` passes (full build gate, end of Phase 2)
+- [x] Test count: 13 tests pass (C1-C13 below; no silent deletions)
+- [x] `./mvnw -q test -Dtest=RevenueTypeControllerTest` passes
+- [x] `./mvnw -B verify` passes (full build gate, end of Phase 2)
 
 **Tests**: unit
 **Gate**: quick, then build (phase completion)
