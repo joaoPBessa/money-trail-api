@@ -206,10 +206,10 @@ error-shape type is introduced.
 
 **Done when**:
 
-- [ ] `GlobalExceptionHandler` has one `@ExceptionHandler` per exception from T4, returning the
+- [x] `GlobalExceptionHandler` has one `@ExceptionHandler` per exception from T4, returning the
       correct status and an `ApiError` body
-- [ ] The existing `distribution-method` exception handlers are untouched
-- [ ] `./mvnw -B verify` passes
+- [x] The existing `distribution-method` exception handlers are untouched
+- [x] `./mvnw -B verify` passes
 
 **Tests**: none (exercised by T8's controller tests and T9's acceptance suite, which trigger each
 exception and assert the resulting status + body)

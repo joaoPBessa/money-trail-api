@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import com.moneytrail.api.distributionmethod.exception.DistributionMethodNotFoundException;
 import com.moneytrail.api.distributionmethod.exception.DuplicateDistributionMethodTitleException;
 import com.moneytrail.api.distributionmethod.exception.InvalidDistributionMethodException;
+import com.moneytrail.api.revenuetype.exception.DuplicateRevenueTypeNameException;
+import com.moneytrail.api.revenuetype.exception.RevenueTypeNotFoundException;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
@@ -28,5 +30,17 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ApiError> handleInvalid(InvalidDistributionMethodException exception) {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                 .body(new ApiError(HttpStatus.BAD_REQUEST.value(), exception.getMessage()));
+    }
+
+    @ExceptionHandler(RevenueTypeNotFoundException.class)
+    public ResponseEntity<ApiError> handleNotFound(RevenueTypeNotFoundException exception) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body(new ApiError(HttpStatus.NOT_FOUND.value(), exception.getMessage()));
+    }
+
+    @ExceptionHandler(DuplicateRevenueTypeNameException.class)
+    public ResponseEntity<ApiError> handleDuplicate(DuplicateRevenueTypeNameException exception) {
+        return ResponseEntity.status(HttpStatus.CONFLICT)
+                .body(new ApiError(HttpStatus.CONFLICT.value(), exception.getMessage()));
     }
 }
