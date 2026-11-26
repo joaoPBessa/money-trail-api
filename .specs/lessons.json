@@ -3,7 +3,7 @@
   "promote_threshold": 2,
   "window_days": 45,
   "quarantine_threshold": 2,
-  "next_id": 4,
+  "next_id": 6,
   "lessons": [
     {
       "id": "L-001",
@@ -58,6 +58,42 @@
       ],
       "created": "2026-11-26T17:49:29Z",
       "last_seen": "2026-11-26T17:49:29Z"
+    },
+    {
+      "id": "L-004",
+      "key": "ac_gap::when a field is trimmed before persistence apply length size bean validation size to the trimmed value not the raw request value e g trim in the dto s constructor before validation runs not only in the service layer",
+      "text": "When a field is trimmed before persistence, apply length/size bean-validation (@Size) to the trimmed value, not the raw request value - e.g. trim in the DTO's constructor before validation runs, not only in the service layer.",
+      "signal": "ac_gap",
+      "scope": "domain/validation",
+      "status": "candidate",
+      "features": [
+        "revenue-type"
+      ],
+      "recurrence": 1,
+      "harmful": 0,
+      "evidence": [
+        "RevenueTypeRequest.java:6 (domain/validation)"
+      ],
+      "created": "2026-11-26T20:39:20Z",
+      "last_seen": "2026-11-26T20:39:20Z"
+    },
+    {
+      "id": "L-005",
+      "key": "weak_test::a test proving a rejected write persisted nothing must assert the row count or absence of the record explicitly not just the http status code a 404 400 status alone does not prove nothing was written",
+      "text": "A test proving a rejected write 'persisted nothing' must assert the row count (or absence of the record) explicitly, not just the HTTP status code - a 404/400 status alone does not prove nothing was written.",
+      "signal": "weak_test",
+      "scope": "api/checks",
+      "status": "candidate",
+      "features": [
+        "revenue-type"
+      ],
+      "recurrence": 1,
+      "harmful": 0,
+      "evidence": [
+        "C35 (api/checks)"
+      ],
+      "created": "2026-11-26T20:39:25Z",
+      "last_seen": "2026-11-26T20:39:25Z"
     }
   ]
 }

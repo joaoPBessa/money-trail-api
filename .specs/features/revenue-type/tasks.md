@@ -19,7 +19,7 @@ arguments or `ArgumentCaptor` - never Mockito's `any()`.
 **Design**: skipped - standard layered Spring Boot CRUD (entity / repository / service /
 controller), reusing the `distribution-method` pattern and its shared `GlobalExceptionHandler` /
 `ApiError`. No architectural decision to record.
-**Status**: Approved
+**Status**: Done
 **Approved**: 2026-11-26 - user: "Aprovado, pode seguir" (tasks)
 **Build**: `./mvnw -B verify`
 

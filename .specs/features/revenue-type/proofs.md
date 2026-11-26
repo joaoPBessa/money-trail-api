@@ -1,9 +1,9 @@
 # revenue-type proofs
 
-**HEAD**: 62d9ad1
+**HEAD**: 85d5ac5
 **Tree**: clean
 **Shell**: C:/Program Files/Git\bin\bash.exe
-**Result**: 41 pass, 0 fail
+**Result**: 43 pass, 0 fail
 
 | Check | Proof | Result |
 | --- | --- | --- |
@@ -47,6 +47,8 @@
 | C38 | `./mvnw -q test -DfailIfNoTests=true -Dtest=RevenueTypeAcceptanceTest#deleteRevenueType_returns204AndRemovesRec` | pass |
 | C39 | `./mvnw -q test -DfailIfNoTests=true -Dtest=RevenueTypeAcceptanceTest#deleteRevenueType_returns404_whenIdMissin` | pass |
 | C40 | `./mvnw -q test -DfailIfNoTests=true -Dtest=RevenueTypeAcceptanceTest#deleteASeededType_isAcceptedWithNoProtect` | pass |
+| C41 | `./mvnw -q test -DfailIfNoTests=true -Dtest=RevenueTypeControllerTest#createType_returns201_whenNameTrimsToExac` | pass |
+| C42 | `./mvnw -q test -DfailIfNoTests=true -Dtest=RevenueTypeAcceptanceTest#createRevenueType_returns201_whenNameTrim` | pass |
 | Build | `./mvnw -B verify` | pass |
 
 ## Output
@@ -66,22 +68,22 @@ Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot lo
 
 ```
 Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 WARNING: A Java agent has been loaded dynamically (C:\Users\joaob\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.17\byte-buddy-agent-1.18.17.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
 WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
 WARNING: Dynamic loading of agents will be disallowed by default in a future release
-Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 ```
 
 `./mvnw -q test -DfailIfNoTests=true -Dtest=RevenueTypeServiceTest#create_throwsDuplicate_whenNameDiffersOnlyBy` - exit 0
 
 ```
 Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 WARNING: A Java agent has been loaded dynamically (C:\Users\joaob\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.17\byte-buddy-agent-1.18.17.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
 WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
 WARNING: Dynamic loading of agents will be disallowed by default in a future release
-Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 ```
 
 `./mvnw -q test -DfailIfNoTests=true -Dtest=RevenueTypeServiceTest#findAll_returnsAllOrderedByCreatedAtAscendin` - exit 0
@@ -132,11 +134,11 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
 
 ```
 Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 WARNING: A Java agent has been loaded dynamically (C:\Users\joaob\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.17\byte-buddy-agent-1.18.17.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
 WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
 WARNING: Dynamic loading of agents will be disallowed by default in a future release
-Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 ```
 
 `./mvnw -q test -DfailIfNoTests=true -Dtest=RevenueTypeServiceTest#update_throwsDuplicate_whenNameUsedByDiffere` - exit 0
@@ -154,42 +156,42 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
 
 ```
 Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
-Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 WARNING: A Java agent has been loaded dynamically (C:\Users\joaob\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.17\byte-buddy-agent-1.18.17.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
 WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
 WARNING: Dynamic loading of agents will be disallowed by default in a future release
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 ```
 
 `./mvnw -q test -DfailIfNoTests=true -Dtest=RevenueTypeServiceTest#delete_removesType_whenExists` - exit 0
 
 ```
 Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 WARNING: A Java agent has been loaded dynamically (C:\Users\joaob\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.17\byte-buddy-agent-1.18.17.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
 WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
 WARNING: Dynamic loading of agents will be disallowed by default in a future release
-Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 ```
 
 `./mvnw -q test -DfailIfNoTests=true -Dtest=RevenueTypeServiceTest#delete_throwsNotFound_whenIdMissing` - exit 0
 
 ```
 Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 WARNING: A Java agent has been loaded dynamically (C:\Users\joaob\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.17\byte-buddy-agent-1.18.17.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
 WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
 WARNING: Dynamic loading of agents will be disallowed by default in a future release
-Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 ```
 
 `./mvnw -q test -DfailIfNoTests=true -Dtest=RevenueTypeControllerTest#createType_returns201WithLocationHeader_w` - exit 0
 
 ```
-17:06:26.459 [main] INFO org.hibernate.validator.internal.util.Version -- HV000001: Hibernate Validator 9.1.6.Final
-17:06:26.790 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
-17:06:26.791 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
-17:06:26.796 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 3 ms
+17:27:57.239 [main] INFO org.hibernate.validator.internal.util.Version -- HV000001: Hibernate Validator 9.1.6.Final
+17:27:57.611 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+17:27:57.612 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+17:27:57.617 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 3 ms
 Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
 Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 WARNING: A Java agent has been loaded dynamically (C:\Users\joaob\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.17\byte-buddy-agent-1.18.17.jar)
@@ -201,42 +203,42 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
 `./mvnw -q test -DfailIfNoTests=true -Dtest=RevenueTypeControllerTest#createType_returns400_whenNameBlank` - exit 0
 
 ```
-17:06:40.380 [main] INFO org.hibernate.validator.internal.util.Version -- HV000001: Hibernate Validator 9.1.6.Final
-17:06:40.680 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
-17:06:40.681 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
-17:06:40.686 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 2 ms
-17:06:40.963 [main] WARN org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver -- Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.moneytrail.api.revenuetype.dto.RevenueTypeResponse> com.moneytrail.api.revenuetype.RevenueTypeController.create(com.moneytrail.api.revenuetype.dto.RevenueTypeRequest): [Field error in object 'revenueTypeRequest' on field 'name': rejected value [ ]; codes [NotBlank.revenueTypeRequest.name,NotBlank.name,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [revenueTypeRequest.name,name]; arguments []; default message [name]]; default message [must not be blank]] ]
+17:28:09.764 [main] INFO org.hibernate.validator.internal.util.Version -- HV000001: Hibernate Validator 9.1.6.Final
+17:28:10.046 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+17:28:10.048 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+17:28:10.052 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 2 ms
+17:28:10.337 [main] WARN org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver -- Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.moneytrail.api.revenuetype.dto.RevenueTypeResponse> com.moneytrail.api.revenuetype.RevenueTypeController.create(com.moneytrail.api.revenuetype.dto.RevenueTypeRequest): [Field error in object 'revenueTypeRequest' on field 'name': rejected value []; codes [NotBlank.revenueTypeRequest.name,NotBlank.name,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [revenueTypeRequest.name,name]; arguments []; default message [name]]; default message [must not be blank]] ]
 Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 WARNING: A Java agent has been loaded dynamically (C:\Users\joaob\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.17\byte-buddy-agent-1.18.17.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
 WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
 WARNING: Dynamic loading of agents will be disallowed by default in a future release
-Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 ```
 
 `./mvnw -q test -DfailIfNoTests=true -Dtest=RevenueTypeControllerTest#createType_returns400_whenNameTooLong` - exit 0
 
 ```
-17:06:52.841 [main] INFO org.hibernate.validator.internal.util.Version -- HV000001: Hibernate Validator 9.1.6.Final
-17:06:53.134 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
-17:06:53.136 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
-17:06:53.140 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 2 ms
-17:06:53.369 [main] WARN org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver -- Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.moneytrail.api.revenuetype.dto.RevenueTypeResponse> com.moneytrail.api.revenuetype.RevenueTypeController.create(com.moneytrail.api.revenuetype.dto.RevenueTypeRequest): [Field error in object 'revenueTypeRequest' on field 'name': rejected value [aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa]; codes [Size.revenueTypeRequest.name,Size.name,Size.java.lang.String,Size]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [revenueTypeRequest.name,name]; arguments []; default message [name],100,0]; default message [size must be between 0 and 100]] ]
+17:28:23.624 [main] INFO org.hibernate.validator.internal.util.Version -- HV000001: Hibernate Validator 9.1.6.Final
+17:28:24.555 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+17:28:24.569 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+17:28:24.612 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 7 ms
+17:28:25.669 [main] WARN org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver -- Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.moneytrail.api.revenuetype.dto.RevenueTypeResponse> com.moneytrail.api.revenuetype.RevenueTypeController.create(com.moneytrail.api.revenuetype.dto.RevenueTypeRequest): [Field error in object 'revenueTypeRequest' on field 'name': rejected value [aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa]; codes [Size.revenueTypeRequest.name,Size.name,Size.java.lang.String,Size]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [revenueTypeRequest.name,name]; arguments []; default message [name],100,0]; default message [size must be between 0 and 100]] ]
 Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
-Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 WARNING: A Java agent has been loaded dynamically (C:\Users\joaob\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.17\byte-buddy-agent-1.18.17.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
 WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
 WARNING: Dynamic loading of agents will be disallowed by default in a future release
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 ```
 
 `./mvnw -q test -DfailIfNoTests=true -Dtest=RevenueTypeControllerTest#createType_returns409_whenServiceThrowsDu` - exit 0
 
 ```
-17:07:02.868 [main] INFO org.hibernate.validator.internal.util.Version -- HV000001: Hibernate Validator 9.1.6.Final
-17:07:03.186 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
-17:07:03.188 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
-17:07:03.192 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 2 ms
+17:28:36.813 [main] INFO org.hibernate.validator.internal.util.Version -- HV000001: Hibernate Validator 9.1.6.Final
+17:28:37.109 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+17:28:37.110 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+17:28:37.114 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 2 ms
 Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
 Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 WARNING: A Java agent has been loaded dynamically (C:\Users\joaob\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.17\byte-buddy-agent-1.18.17.jar)
@@ -248,25 +250,25 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
 `./mvnw -q test -DfailIfNoTests=true -Dtest=RevenueTypeControllerTest#listTypes_returns200WithAllTypes_whenServ` - exit 0
 
 ```
-17:07:13.755 [main] INFO org.hibernate.validator.internal.util.Version -- HV000001: Hibernate Validator 9.1.6.Final
-17:07:14.048 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
-17:07:14.050 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
-17:07:14.054 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 2 ms
+17:28:48.383 [main] INFO org.hibernate.validator.internal.util.Version -- HV000001: Hibernate Validator 9.1.6.Final
+17:28:48.674 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+17:28:48.676 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+17:28:48.679 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 2 ms
 Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 WARNING: A Java agent has been loaded dynamically (C:\Users\joaob\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.17\byte-buddy-agent-1.18.17.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
 WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
 WARNING: Dynamic loading of agents will be disallowed by default in a future release
-Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 ```
 
 `./mvnw -q test -DfailIfNoTests=true -Dtest=RevenueTypeControllerTest#listTypes_returns200WithEmptyArray_whenNo` - exit 0
 
 ```
-17:07:26.215 [main] INFO org.hibernate.validator.internal.util.Version -- HV000001: Hibernate Validator 9.1.6.Final
-17:07:26.564 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
-17:07:26.566 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
-17:07:26.572 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 4 ms
+17:29:01.082 [main] INFO org.hibernate.validator.internal.util.Version -- HV000001: Hibernate Validator 9.1.6.Final
+17:29:01.372 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+17:29:01.375 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+17:29:01.377 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 2 ms
 Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
 WARNING: A Java agent has been loaded dynamically (C:\Users\joaob\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.17\byte-buddy-agent-1.18.17.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
@@ -278,10 +280,10 @@ Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot lo
 `./mvnw -q test -DfailIfNoTests=true -Dtest=RevenueTypeControllerTest#getType_returns200WithBody_whenExists` - exit 0
 
 ```
-17:07:38.665 [main] INFO org.hibernate.validator.internal.util.Version -- HV000001: Hibernate Validator 9.1.6.Final
-17:07:38.973 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
-17:07:38.975 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
-17:07:38.979 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 2 ms
+17:29:13.623 [main] INFO org.hibernate.validator.internal.util.Version -- HV000001: Hibernate Validator 9.1.6.Final
+17:29:14.314 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+17:29:14.321 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+17:29:14.338 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 8 ms
 Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
 Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 WARNING: A Java agent has been loaded dynamically (C:\Users\joaob\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.17\byte-buddy-agent-1.18.17.jar)
@@ -293,10 +295,10 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
 `./mvnw -q test -DfailIfNoTests=true -Dtest=RevenueTypeControllerTest#getType_returns404_whenServiceThrowsNotFo` - exit 0
 
 ```
-17:07:52.281 [main] INFO org.hibernate.validator.internal.util.Version -- HV000001: Hibernate Validator 9.1.6.Final
-17:07:52.587 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
-17:07:52.589 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
-17:07:52.594 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 3 ms
+17:29:25.553 [main] INFO org.hibernate.validator.internal.util.Version -- HV000001: Hibernate Validator 9.1.6.Final
+17:29:25.840 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+17:29:25.842 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+17:29:25.846 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 2 ms
 Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
 WARNING: A Java agent has been loaded dynamically (C:\Users\joaob\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.17\byte-buddy-agent-1.18.17.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
@@ -308,70 +310,70 @@ Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot lo
 `./mvnw -q test -DfailIfNoTests=true -Dtest=RevenueTypeControllerTest#updateType_returns200WithUpdatedBody_when` - exit 0
 
 ```
-17:08:03.466 [main] INFO org.hibernate.validator.internal.util.Version -- HV000001: Hibernate Validator 9.1.6.Final
-17:08:03.764 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
-17:08:03.766 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
-17:08:03.770 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 3 ms
+17:29:36.809 [main] INFO org.hibernate.validator.internal.util.Version -- HV000001: Hibernate Validator 9.1.6.Final
+17:29:37.100 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+17:29:37.101 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+17:29:37.104 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 3 ms
 Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 WARNING: A Java agent has been loaded dynamically (C:\Users\joaob\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.17\byte-buddy-agent-1.18.17.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
 WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
 WARNING: Dynamic loading of agents will be disallowed by default in a future release
-Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 ```
 
 `./mvnw -q test -DfailIfNoTests=true -Dtest=RevenueTypeControllerTest#updateType_returns404_whenServiceThrowsNo` - exit 0
 
 ```
-17:08:14.541 [main] INFO org.hibernate.validator.internal.util.Version -- HV000001: Hibernate Validator 9.1.6.Final
-17:08:14.848 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
-17:08:14.850 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
-17:08:14.855 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 2 ms
+17:29:48.456 [main] INFO org.hibernate.validator.internal.util.Version -- HV000001: Hibernate Validator 9.1.6.Final
+17:29:48.745 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+17:29:48.746 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+17:29:48.750 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 2 ms
 Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
-Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 WARNING: A Java agent has been loaded dynamically (C:\Users\joaob\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.17\byte-buddy-agent-1.18.17.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
 WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
 WARNING: Dynamic loading of agents will be disallowed by default in a future release
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 ```
 
 `./mvnw -q test -DfailIfNoTests=true -Dtest=RevenueTypeControllerTest#updateType_returns409_whenServiceThrowsDu` - exit 0
 
 ```
-17:08:26.970 [main] INFO org.hibernate.validator.internal.util.Version -- HV000001: Hibernate Validator 9.1.6.Final
-17:08:27.284 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
-17:08:27.286 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
-17:08:27.290 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 3 ms
+17:30:01.039 [main] INFO org.hibernate.validator.internal.util.Version -- HV000001: Hibernate Validator 9.1.6.Final
+17:30:01.337 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+17:30:01.339 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+17:30:01.342 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 2 ms
 Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 WARNING: A Java agent has been loaded dynamically (C:\Users\joaob\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.17\byte-buddy-agent-1.18.17.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
 WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
 WARNING: Dynamic loading of agents will be disallowed by default in a future release
-Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 ```
 
 `./mvnw -q test -DfailIfNoTests=true -Dtest=RevenueTypeControllerTest#deleteType_returns204_whenServiceSucceeds` - exit 0
 
 ```
-17:08:37.409 [main] INFO org.hibernate.validator.internal.util.Version -- HV000001: Hibernate Validator 9.1.6.Final
-17:08:37.709 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
-17:08:37.711 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
-17:08:37.715 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 2 ms
+17:30:11.304 [main] INFO org.hibernate.validator.internal.util.Version -- HV000001: Hibernate Validator 9.1.6.Final
+17:30:11.585 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+17:30:11.587 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+17:30:11.591 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 2 ms
 Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
-Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 WARNING: A Java agent has been loaded dynamically (C:\Users\joaob\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.17\byte-buddy-agent-1.18.17.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
 WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
 WARNING: Dynamic loading of agents will be disallowed by default in a future release
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 ```
 
 `./mvnw -q test -DfailIfNoTests=true -Dtest=RevenueTypeControllerTest#deleteType_returns404_whenServiceThrowsNo` - exit 0
 
 ```
-17:08:50.672 [main] INFO org.hibernate.validator.internal.util.Version -- HV000001: Hibernate Validator 9.1.6.Final
-17:08:50.972 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
-17:08:50.973 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
-17:08:50.977 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 2 ms
+17:30:23.226 [main] INFO org.hibernate.validator.internal.util.Version -- HV000001: Hibernate Validator 9.1.6.Final
+17:30:23.521 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+17:30:23.523 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+17:30:23.527 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 2 ms
 Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
 WARNING: A Java agent has been loaded dynamically (C:\Users\joaob\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.17\byte-buddy-agent-1.18.17.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
@@ -384,14 +386,14 @@ Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot lo
 
 ```
 	Maximum pool size: undefined/unknown
-2026-11-26T17:09:09.590-03:00  INFO 18504 --- [money-trail-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-11-26T17:09:09.727-03:00  INFO 18504 --- [money-trail-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-11-26T17:09:10.688-03:00  INFO 18504 --- [money-trail-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-11-26T17:09:13.782-03:00  INFO 18504 --- [money-trail-api] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2026-11-26T17:09:13.784-03:00  INFO 18504 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2026-11-26T17:09:13.804-03:00  INFO 18504 --- [money-trail-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
-2026-11-26T17:09:13.833-03:00  INFO 18504 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 49 ms
-2026-11-26T17:09:14.098-03:00  INFO 18504 --- [money-trail-api] [           main] c.m.a.r.RevenueTypeAcceptanceTest        : Started RevenueTypeAcceptanceTest in 12.887 seconds (process running for 14.224)
+2026-11-26T17:30:46.061-03:00  INFO 8908 --- [money-trail-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-26T17:30:46.167-03:00  INFO 8908 --- [money-trail-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-26T17:30:46.793-03:00  INFO 8908 --- [money-trail-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-26T17:30:50.473-03:00  INFO 8908 --- [money-trail-api] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-26T17:30:50.473-03:00  INFO 8908 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-26T17:30:50.495-03:00  INFO 8908 --- [money-trail-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2026-11-26T17:30:50.521-03:00  INFO 8908 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 48 ms
+2026-11-26T17:30:50.794-03:00  INFO 8908 --- [money-trail-api] [           main] c.m.a.r.RevenueTypeAcceptanceTest        : Started RevenueTypeAcceptanceTest in 15.109 seconds (process running for 16.404)
 Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
 Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 WARNING: A Java agent has been loaded dynamically (C:\Users\joaob\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.17\byte-buddy-agent-1.18.17.jar)
@@ -404,14 +406,14 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
 
 ```
 	Maximum pool size: undefined/unknown
-2026-11-26T17:09:34.637-03:00  INFO 21656 --- [money-trail-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-11-26T17:09:34.743-03:00  INFO 21656 --- [money-trail-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-11-26T17:09:35.895-03:00  INFO 21656 --- [money-trail-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-11-26T17:09:39.346-03:00  INFO 21656 --- [money-trail-api] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2026-11-26T17:09:39.347-03:00  INFO 21656 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2026-11-26T17:09:39.367-03:00  INFO 21656 --- [money-trail-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
-2026-11-26T17:09:39.476-03:00  INFO 21656 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 128 ms
-2026-11-26T17:09:39.742-03:00  INFO 21656 --- [money-trail-api] [           main] c.m.a.r.RevenueTypeAcceptanceTest        : Started RevenueTypeAcceptanceTest in 12.989 seconds (process running for 14.276)
+2026-11-26T17:31:15.686-03:00  INFO 26568 --- [money-trail-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-26T17:31:15.795-03:00  INFO 26568 --- [money-trail-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-26T17:31:16.652-03:00  INFO 26568 --- [money-trail-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-26T17:31:19.895-03:00  INFO 26568 --- [money-trail-api] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-26T17:31:19.895-03:00  INFO 26568 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-26T17:31:19.934-03:00  INFO 26568 --- [money-trail-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2026-11-26T17:31:19.967-03:00  INFO 26568 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 72 ms
+2026-11-26T17:31:20.148-03:00  INFO 26568 --- [money-trail-api] [           main] c.m.a.r.RevenueTypeAcceptanceTest        : Started RevenueTypeAcceptanceTest in 14.525 seconds (process running for 15.978)
 Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
 Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 WARNING: A Java agent has been loaded dynamically (C:\Users\joaob\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.17\byte-buddy-agent-1.18.17.jar)
@@ -423,55 +425,55 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
 `./mvnw -q test -DfailIfNoTests=true -Dtest=RevenueTypeAcceptanceTest#createRevenueType_returns400_whenNameBlan` - exit 0
 
 ```
-2026-11-26T17:10:01.699-03:00  INFO 21636 --- [money-trail-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-11-26T17:10:01.789-03:00  INFO 21636 --- [money-trail-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-11-26T17:10:03.027-03:00  INFO 21636 --- [money-trail-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-11-26T17:10:06.491-03:00  INFO 21636 --- [money-trail-api] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2026-11-26T17:10:06.492-03:00  INFO 21636 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2026-11-26T17:10:06.519-03:00  INFO 21636 --- [money-trail-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
-2026-11-26T17:10:06.547-03:00  INFO 21636 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 54 ms
-2026-11-26T17:10:06.708-03:00  INFO 21636 --- [money-trail-api] [           main] c.m.a.r.RevenueTypeAcceptanceTest        : Started RevenueTypeAcceptanceTest in 15.087 seconds (process running for 16.361)
-2026-11-26T17:10:08.803-03:00  WARN 21636 --- [money-trail-api] [           main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.moneytrail.api.revenuetype.dto.RevenueTypeResponse> com.moneytrail.api.revenuetype.RevenueTypeController.create(com.moneytrail.api.revenuetype.dto.RevenueTypeRequest): [Field error in object 'revenueTypeRequest' on field 'name': rejected value [ ]; codes [NotBlank.revenueTypeRequest.name,NotBlank.name,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [revenueTypeRequest.name,name]; arguments []; default message [name]]; default message [must not be blank]] ]
+2026-11-26T17:31:39.376-03:00  INFO 1952 --- [money-trail-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-26T17:31:39.471-03:00  INFO 1952 --- [money-trail-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-26T17:31:40.476-03:00  INFO 1952 --- [money-trail-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-26T17:31:44.019-03:00  INFO 1952 --- [money-trail-api] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-26T17:31:44.019-03:00  INFO 1952 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-26T17:31:44.032-03:00  INFO 1952 --- [money-trail-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2026-11-26T17:31:44.053-03:00  INFO 1952 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 34 ms
+2026-11-26T17:31:44.239-03:00  INFO 1952 --- [money-trail-api] [           main] c.m.a.r.RevenueTypeAcceptanceTest        : Started RevenueTypeAcceptanceTest in 12.352 seconds (process running for 13.532)
+2026-11-26T17:31:47.156-03:00  WARN 1952 --- [money-trail-api] [           main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.moneytrail.api.revenuetype.dto.RevenueTypeResponse> com.moneytrail.api.revenuetype.RevenueTypeController.create(com.moneytrail.api.revenuetype.dto.RevenueTypeRequest): [Field error in object 'revenueTypeRequest' on field 'name': rejected value []; codes [NotBlank.revenueTypeRequest.name,NotBlank.name,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [revenueTypeRequest.name,name]; arguments []; default message [name]]; default message [must not be blank]] ]
 Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 WARNING: A Java agent has been loaded dynamically (C:\Users\joaob\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.17\byte-buddy-agent-1.18.17.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
 WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
 WARNING: Dynamic loading of agents will be disallowed by default in a future release
-Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 ```
 
 `./mvnw -q test -DfailIfNoTests=true -Dtest=RevenueTypeAcceptanceTest#createRevenueType_returns400_whenNameExce` - exit 0
 
 ```
-2026-11-26T17:10:26.505-03:00  INFO 23280 --- [money-trail-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-11-26T17:10:26.625-03:00  INFO 23280 --- [money-trail-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-11-26T17:10:27.217-03:00  INFO 23280 --- [money-trail-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-11-26T17:10:30.534-03:00  INFO 23280 --- [money-trail-api] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2026-11-26T17:10:30.535-03:00  INFO 23280 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2026-11-26T17:10:30.569-03:00  INFO 23280 --- [money-trail-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
-2026-11-26T17:10:30.608-03:00  INFO 23280 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 72 ms
-2026-11-26T17:10:30.862-03:00  INFO 23280 --- [money-trail-api] [           main] c.m.a.r.RevenueTypeAcceptanceTest        : Started RevenueTypeAcceptanceTest in 12.963 seconds (process running for 14.214)
-2026-11-26T17:10:33.003-03:00  WARN 23280 --- [money-trail-api] [           main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.moneytrail.api.revenuetype.dto.RevenueTypeResponse> com.moneytrail.api.revenuetype.RevenueTypeController.create(com.moneytrail.api.revenuetype.dto.RevenueTypeRequest): [Field error in object 'revenueTypeRequest' on field 'name': rejected value [aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa]; codes [Size.revenueTypeRequest.name,Size.name,Size.java.lang.String,Size]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [revenueTypeRequest.name,name]; arguments []; default message [name],100,0]; default message [size must be between 0 and 100]] ]
+2026-11-26T17:32:12.303-03:00  INFO 29468 --- [money-trail-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-26T17:32:12.541-03:00  INFO 29468 --- [money-trail-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-26T17:32:13.600-03:00  INFO 29468 --- [money-trail-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-26T17:32:17.352-03:00  INFO 29468 --- [money-trail-api] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-26T17:32:17.352-03:00  INFO 29468 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-26T17:32:17.381-03:00  INFO 29468 --- [money-trail-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2026-11-26T17:32:17.398-03:00  INFO 29468 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 46 ms
+2026-11-26T17:32:17.547-03:00  INFO 29468 --- [money-trail-api] [           main] c.m.a.r.RevenueTypeAcceptanceTest        : Started RevenueTypeAcceptanceTest in 17.235 seconds (process running for 18.818)
+2026-11-26T17:32:20.034-03:00  WARN 29468 --- [money-trail-api] [           main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.moneytrail.api.revenuetype.dto.RevenueTypeResponse> com.moneytrail.api.revenuetype.RevenueTypeController.create(com.moneytrail.api.revenuetype.dto.RevenueTypeRequest): [Field error in object 'revenueTypeRequest' on field 'name': rejected value [aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa]; codes [Size.revenueTypeRequest.name,Size.name,Size.java.lang.String,Size]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [revenueTypeRequest.name,name]; arguments []; default message [name],100,0]; default message [size must be between 0 and 100]] ]
 Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 WARNING: A Java agent has been loaded dynamically (C:\Users\joaob\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.17\byte-buddy-agent-1.18.17.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
 WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
 WARNING: Dynamic loading of agents will be disallowed by default in a future release
-Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 ```
 
 `./mvnw -q test -DfailIfNoTests=true -Dtest=RevenueTypeAcceptanceTest#createRevenueType_returns409_whenNameDupl` - exit 0
 
 ```
 	Maximum pool size: undefined/unknown
-2026-11-26T17:10:49.730-03:00  INFO 34896 --- [money-trail-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-11-26T17:10:49.837-03:00  INFO 34896 --- [money-trail-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-11-26T17:10:50.850-03:00  INFO 34896 --- [money-trail-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-11-26T17:10:54.491-03:00  INFO 34896 --- [money-trail-api] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2026-11-26T17:10:54.492-03:00  INFO 34896 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2026-11-26T17:10:54.556-03:00  INFO 34896 --- [money-trail-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
-2026-11-26T17:10:54.619-03:00  INFO 34896 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 127 ms
-2026-11-26T17:10:54.794-03:00  INFO 34896 --- [money-trail-api] [           main] c.m.a.r.RevenueTypeAcceptanceTest        : Started RevenueTypeAcceptanceTest in 12.427 seconds (process running for 13.647)
+2026-11-26T17:32:41.144-03:00  INFO 17084 --- [money-trail-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-26T17:32:41.254-03:00  INFO 17084 --- [money-trail-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-26T17:32:42.160-03:00  INFO 17084 --- [money-trail-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-26T17:32:45.357-03:00  INFO 17084 --- [money-trail-api] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-26T17:32:45.358-03:00  INFO 17084 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-26T17:32:45.372-03:00  INFO 17084 --- [money-trail-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2026-11-26T17:32:45.390-03:00  INFO 17084 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 32 ms
+2026-11-26T17:32:45.634-03:00  INFO 17084 --- [money-trail-api] [           main] c.m.a.r.RevenueTypeAcceptanceTest        : Started RevenueTypeAcceptanceTest in 11.592 seconds (process running for 12.827)
 Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
 Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 WARNING: A Java agent has been loaded dynamically (C:\Users\joaob\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.17\byte-buddy-agent-1.18.17.jar)
@@ -484,14 +486,14 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
 
 ```
 	Maximum pool size: undefined/unknown
-2026-11-26T17:11:21.553-03:00  INFO 36004 --- [money-trail-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-11-26T17:11:21.656-03:00  INFO 36004 --- [money-trail-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-11-26T17:11:22.155-03:00  INFO 36004 --- [money-trail-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-11-26T17:11:26.186-03:00  INFO 36004 --- [money-trail-api] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2026-11-26T17:11:26.186-03:00  INFO 36004 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2026-11-26T17:11:26.256-03:00  INFO 36004 --- [money-trail-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
-2026-11-26T17:11:26.279-03:00  INFO 36004 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 83 ms
-2026-11-26T17:11:26.532-03:00  INFO 36004 --- [money-trail-api] [           main] c.m.a.r.RevenueTypeAcceptanceTest        : Started RevenueTypeAcceptanceTest in 15.281 seconds (process running for 16.896)
+2026-11-26T17:33:08.193-03:00  INFO 35512 --- [money-trail-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-26T17:33:08.273-03:00  INFO 35512 --- [money-trail-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-26T17:33:08.717-03:00  INFO 35512 --- [money-trail-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-26T17:33:12.289-03:00  INFO 35512 --- [money-trail-api] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-26T17:33:12.289-03:00  INFO 35512 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-26T17:33:12.369-03:00  INFO 35512 --- [money-trail-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2026-11-26T17:33:12.388-03:00  INFO 35512 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 94 ms
+2026-11-26T17:33:12.662-03:00  INFO 35512 --- [money-trail-api] [           main] c.m.a.r.RevenueTypeAcceptanceTest        : Started RevenueTypeAcceptanceTest in 12.169 seconds (process running for 13.426)
 Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
 Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 WARNING: A Java agent has been loaded dynamically (C:\Users\joaob\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.17\byte-buddy-agent-1.18.17.jar)
@@ -504,34 +506,34 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
 
 ```
 	Maximum pool size: undefined/unknown
-2026-11-26T17:11:55.158-03:00  INFO 34848 --- [money-trail-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-11-26T17:11:55.284-03:00  INFO 34848 --- [money-trail-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-11-26T17:11:56.051-03:00  INFO 34848 --- [money-trail-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-11-26T17:11:59.277-03:00  INFO 34848 --- [money-trail-api] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2026-11-26T17:11:59.279-03:00  INFO 34848 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2026-11-26T17:11:59.349-03:00  INFO 34848 --- [money-trail-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
-2026-11-26T17:11:59.371-03:00  INFO 34848 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 92 ms
-2026-11-26T17:11:59.625-03:00  INFO 34848 --- [money-trail-api] [           main] c.m.a.r.RevenueTypeAcceptanceTest        : Started RevenueTypeAcceptanceTest in 12.203 seconds (process running for 13.502)
+2026-11-26T17:33:34.129-03:00  INFO 26960 --- [money-trail-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-26T17:33:34.218-03:00  INFO 26960 --- [money-trail-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-26T17:33:34.706-03:00  INFO 26960 --- [money-trail-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-26T17:33:39.553-03:00  INFO 26960 --- [money-trail-api] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-26T17:33:39.553-03:00  INFO 26960 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-26T17:33:39.568-03:00  INFO 26960 --- [money-trail-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2026-11-26T17:33:39.587-03:00  INFO 26960 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 34 ms
+2026-11-26T17:33:39.840-03:00  INFO 26960 --- [money-trail-api] [           main] c.m.a.r.RevenueTypeAcceptanceTest        : Started RevenueTypeAcceptanceTest in 12.591 seconds (process running for 13.819)
 Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 WARNING: A Java agent has been loaded dynamically (C:\Users\joaob\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.17\byte-buddy-agent-1.18.17.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
 WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
 WARNING: Dynamic loading of agents will be disallowed by default in a future release
-Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 ```
 
 `./mvnw -q test -DfailIfNoTests=true -Dtest=RevenueTypeAcceptanceTest#getRevenueType_returns404_whenMissing` - exit 0
 
 ```
 	Maximum pool size: undefined/unknown
-2026-11-26T17:12:24.531-03:00  INFO 6008 --- [money-trail-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-11-26T17:12:24.652-03:00  INFO 6008 --- [money-trail-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-11-26T17:12:25.753-03:00  INFO 6008 --- [money-trail-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-11-26T17:12:28.939-03:00  INFO 6008 --- [money-trail-api] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2026-11-26T17:12:28.939-03:00  INFO 6008 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2026-11-26T17:12:28.954-03:00  INFO 6008 --- [money-trail-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
-2026-11-26T17:12:28.975-03:00  INFO 6008 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 33 ms
-2026-11-26T17:12:29.239-03:00  INFO 6008 --- [money-trail-api] [           main] c.m.a.r.RevenueTypeAcceptanceTest        : Started RevenueTypeAcceptanceTest in 13.107 seconds (process running for 14.431)
+2026-11-26T17:34:02.978-03:00  INFO 26540 --- [money-trail-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-26T17:34:03.152-03:00  INFO 26540 --- [money-trail-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-26T17:34:04.017-03:00  INFO 26540 --- [money-trail-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-26T17:34:08.528-03:00  INFO 26540 --- [money-trail-api] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-26T17:34:08.540-03:00  INFO 26540 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-26T17:34:08.601-03:00  INFO 26540 --- [money-trail-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2026-11-26T17:34:08.654-03:00  INFO 26540 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 114 ms
+2026-11-26T17:34:08.874-03:00  INFO 26540 --- [money-trail-api] [           main] c.m.a.r.RevenueTypeAcceptanceTest        : Started RevenueTypeAcceptanceTest in 15.652 seconds (process running for 16.908)
 Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
 WARNING: A Java agent has been loaded dynamically (C:\Users\joaob\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.17\byte-buddy-agent-1.18.17.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
@@ -544,14 +546,14 @@ Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot lo
 
 ```
 	Maximum pool size: undefined/unknown
-2026-11-26T17:12:48.266-03:00  INFO 20128 --- [money-trail-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-11-26T17:12:48.370-03:00  INFO 20128 --- [money-trail-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-11-26T17:12:48.967-03:00  INFO 20128 --- [money-trail-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-11-26T17:12:52.594-03:00  INFO 20128 --- [money-trail-api] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2026-11-26T17:12:52.602-03:00  INFO 20128 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2026-11-26T17:12:52.649-03:00  INFO 20128 --- [money-trail-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
-2026-11-26T17:12:52.677-03:00  INFO 20128 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 75 ms
-2026-11-26T17:12:52.899-03:00  INFO 20128 --- [money-trail-api] [           main] c.m.a.r.RevenueTypeAcceptanceTest        : Started RevenueTypeAcceptanceTest in 11.778 seconds (process running for 13.068)
+2026-11-26T17:34:33.106-03:00  INFO 6812 --- [money-trail-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-26T17:34:33.264-03:00  INFO 6812 --- [money-trail-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-26T17:34:33.779-03:00  INFO 6812 --- [money-trail-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-26T17:34:38.137-03:00  INFO 6812 --- [money-trail-api] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-26T17:34:38.137-03:00  INFO 6812 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-26T17:34:38.191-03:00  INFO 6812 --- [money-trail-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2026-11-26T17:34:38.213-03:00  INFO 6812 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 66 ms
+2026-11-26T17:34:38.411-03:00  INFO 6812 --- [money-trail-api] [           main] c.m.a.r.RevenueTypeAcceptanceTest        : Started RevenueTypeAcceptanceTest in 13.113 seconds (process running for 14.445)
 Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
 WARNING: A Java agent has been loaded dynamically (C:\Users\joaob\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.17\byte-buddy-agent-1.18.17.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
@@ -564,14 +566,14 @@ Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot lo
 
 ```
 	Maximum pool size: undefined/unknown
-2026-11-26T17:13:10.906-03:00  INFO 36700 --- [money-trail-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-11-26T17:13:11.012-03:00  INFO 36700 --- [money-trail-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-11-26T17:13:11.900-03:00  INFO 36700 --- [money-trail-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-11-26T17:13:17.065-03:00  INFO 36700 --- [money-trail-api] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2026-11-26T17:13:17.073-03:00  INFO 36700 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2026-11-26T17:13:17.120-03:00  INFO 36700 --- [money-trail-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
-2026-11-26T17:13:17.169-03:00  INFO 36700 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 96 ms
-2026-11-26T17:13:17.571-03:00  INFO 36700 --- [money-trail-api] [           main] c.m.a.r.RevenueTypeAcceptanceTest        : Started RevenueTypeAcceptanceTest in 13.82 seconds (process running for 15.093)
+2026-11-26T17:35:00.149-03:00  INFO 24332 --- [money-trail-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-26T17:35:00.222-03:00  INFO 24332 --- [money-trail-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-26T17:35:00.786-03:00  INFO 24332 --- [money-trail-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-26T17:35:04.202-03:00  INFO 24332 --- [money-trail-api] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-26T17:35:04.202-03:00  INFO 24332 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-26T17:35:04.222-03:00  INFO 24332 --- [money-trail-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2026-11-26T17:35:04.234-03:00  INFO 24332 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 32 ms
+2026-11-26T17:35:04.469-03:00  INFO 24332 --- [money-trail-api] [           main] c.m.a.r.RevenueTypeAcceptanceTest        : Started RevenueTypeAcceptanceTest in 12.204 seconds (process running for 13.525)
 Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
 WARNING: A Java agent has been loaded dynamically (C:\Users\joaob\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.17\byte-buddy-agent-1.18.17.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
@@ -584,14 +586,14 @@ Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot lo
 
 ```
 	Maximum pool size: undefined/unknown
-2026-11-26T17:13:39.669-03:00  INFO 28132 --- [money-trail-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-11-26T17:13:39.769-03:00  INFO 28132 --- [money-trail-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-11-26T17:13:40.464-03:00  INFO 28132 --- [money-trail-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-11-26T17:13:44.153-03:00  INFO 28132 --- [money-trail-api] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2026-11-26T17:13:44.154-03:00  INFO 28132 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2026-11-26T17:13:44.171-03:00  INFO 28132 --- [money-trail-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
-2026-11-26T17:13:44.190-03:00  INFO 28132 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 36 ms
-2026-11-26T17:13:44.365-03:00  INFO 28132 --- [money-trail-api] [           main] c.m.a.r.RevenueTypeAcceptanceTest        : Started RevenueTypeAcceptanceTest in 11.898 seconds (process running for 13.183)
+2026-11-26T17:35:23.778-03:00  INFO 7520 --- [money-trail-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-26T17:35:23.897-03:00  INFO 7520 --- [money-trail-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-26T17:35:25.023-03:00  INFO 7520 --- [money-trail-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-26T17:35:28.518-03:00  INFO 7520 --- [money-trail-api] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-26T17:35:28.518-03:00  INFO 7520 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-26T17:35:28.553-03:00  INFO 7520 --- [money-trail-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2026-11-26T17:35:28.566-03:00  INFO 7520 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 38 ms
+2026-11-26T17:35:28.805-03:00  INFO 7520 --- [money-trail-api] [           main] c.m.a.r.RevenueTypeAcceptanceTest        : Started RevenueTypeAcceptanceTest in 11.335 seconds (process running for 12.492)
 Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
 Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 WARNING: A Java agent has been loaded dynamically (C:\Users\joaob\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.17\byte-buddy-agent-1.18.17.jar)
@@ -604,14 +606,14 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
 
 ```
 	Maximum pool size: undefined/unknown
-2026-11-26T17:14:02.514-03:00  INFO 6148 --- [money-trail-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-11-26T17:14:02.653-03:00  INFO 6148 --- [money-trail-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-11-26T17:14:03.254-03:00  INFO 6148 --- [money-trail-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-11-26T17:14:06.642-03:00  INFO 6148 --- [money-trail-api] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2026-11-26T17:14:06.642-03:00  INFO 6148 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2026-11-26T17:14:06.664-03:00  INFO 6148 --- [money-trail-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
-2026-11-26T17:14:06.681-03:00  INFO 6148 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 39 ms
-2026-11-26T17:14:06.846-03:00  INFO 6148 --- [money-trail-api] [           main] c.m.a.r.RevenueTypeAcceptanceTest        : Started RevenueTypeAcceptanceTest in 11.384 seconds (process running for 12.602)
+2026-11-26T17:35:48.861-03:00  INFO 28976 --- [money-trail-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-26T17:35:49.047-03:00  INFO 28976 --- [money-trail-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-26T17:35:49.903-03:00  INFO 28976 --- [money-trail-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-26T17:35:53.510-03:00  INFO 28976 --- [money-trail-api] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-26T17:35:53.511-03:00  INFO 28976 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-26T17:35:53.552-03:00  INFO 28976 --- [money-trail-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2026-11-26T17:35:53.589-03:00  INFO 28976 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 77 ms
+2026-11-26T17:35:53.822-03:00  INFO 28976 --- [money-trail-api] [           main] c.m.a.r.RevenueTypeAcceptanceTest        : Started RevenueTypeAcceptanceTest in 13.473 seconds (process running for 14.606)
 Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
 WARNING: A Java agent has been loaded dynamically (C:\Users\joaob\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.17\byte-buddy-agent-1.18.17.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
@@ -624,14 +626,14 @@ Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot lo
 
 ```
 	Maximum pool size: undefined/unknown
-2026-11-26T17:14:27.807-03:00  INFO 17948 --- [money-trail-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-11-26T17:14:28.039-03:00  INFO 17948 --- [money-trail-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-11-26T17:14:29.391-03:00  INFO 17948 --- [money-trail-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-11-26T17:14:33.002-03:00  INFO 17948 --- [money-trail-api] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2026-11-26T17:14:33.002-03:00  INFO 17948 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2026-11-26T17:14:33.015-03:00  INFO 17948 --- [money-trail-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
-2026-11-26T17:14:33.045-03:00  INFO 17948 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 42 ms
-2026-11-26T17:14:33.269-03:00  INFO 17948 --- [money-trail-api] [           main] c.m.a.r.RevenueTypeAcceptanceTest        : Started RevenueTypeAcceptanceTest in 15.057 seconds (process running for 16.332)
+2026-11-26T17:36:20.211-03:00  INFO 14816 --- [money-trail-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-26T17:36:20.341-03:00  INFO 14816 --- [money-trail-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-26T17:36:21.030-03:00  INFO 14816 --- [money-trail-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-26T17:36:25.162-03:00  INFO 14816 --- [money-trail-api] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-26T17:36:25.162-03:00  INFO 14816 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-26T17:36:25.197-03:00  INFO 14816 --- [money-trail-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2026-11-26T17:36:25.217-03:00  INFO 14816 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 55 ms
+2026-11-26T17:36:25.510-03:00  INFO 14816 --- [money-trail-api] [           main] c.m.a.r.RevenueTypeAcceptanceTest        : Started RevenueTypeAcceptanceTest in 16.259 seconds (process running for 17.615)
 Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
 Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 WARNING: A Java agent has been loaded dynamically (C:\Users\joaob\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.17\byte-buddy-agent-1.18.17.jar)
@@ -644,38 +646,73 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
 
 ```
 	Maximum pool size: undefined/unknown
-2026-11-26T17:14:54.899-03:00  INFO 24808 --- [money-trail-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-11-26T17:14:55.006-03:00  INFO 24808 --- [money-trail-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-11-26T17:14:55.702-03:00  INFO 24808 --- [money-trail-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-11-26T17:14:58.997-03:00  INFO 24808 --- [money-trail-api] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2026-11-26T17:14:58.997-03:00  INFO 24808 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2026-11-26T17:14:59.032-03:00  INFO 24808 --- [money-trail-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
-2026-11-26T17:14:59.049-03:00  INFO 24808 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 52 ms
-2026-11-26T17:14:59.246-03:00  INFO 24808 --- [money-trail-api] [           main] c.m.a.r.RevenueTypeAcceptanceTest        : Started RevenueTypeAcceptanceTest in 11.752 seconds (process running for 12.997)
+2026-11-26T17:36:46.467-03:00  INFO 30972 --- [money-trail-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-26T17:36:46.568-03:00  INFO 30972 --- [money-trail-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-26T17:36:47.443-03:00  INFO 30972 --- [money-trail-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-26T17:36:50.485-03:00  INFO 30972 --- [money-trail-api] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-26T17:36:50.485-03:00  INFO 30972 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-26T17:36:50.513-03:00  INFO 30972 --- [money-trail-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2026-11-26T17:36:50.529-03:00  INFO 30972 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 34 ms
+2026-11-26T17:36:50.803-03:00  INFO 30972 --- [money-trail-api] [           main] c.m.a.r.RevenueTypeAcceptanceTest        : Started RevenueTypeAcceptanceTest in 11.871 seconds (process running for 13.105)
 Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
-Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 WARNING: A Java agent has been loaded dynamically (C:\Users\joaob\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.17\byte-buddy-agent-1.18.17.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
 WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
 WARNING: Dynamic loading of agents will be disallowed by default in a future release
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 ```
 
 `./mvnw -q test -DfailIfNoTests=true -Dtest=RevenueTypeAcceptanceTest#deleteASeededType_isAcceptedWithNoProtect` - exit 0
 
 ```
 	Maximum pool size: undefined/unknown
-2026-11-26T17:15:20.669-03:00  INFO 13368 --- [money-trail-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-11-26T17:15:20.796-03:00  INFO 13368 --- [money-trail-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-11-26T17:15:21.400-03:00  INFO 13368 --- [money-trail-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-11-26T17:15:24.455-03:00  INFO 13368 --- [money-trail-api] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2026-11-26T17:15:24.455-03:00  INFO 13368 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2026-11-26T17:15:24.518-03:00  INFO 13368 --- [money-trail-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
-2026-11-26T17:15:24.574-03:00  INFO 13368 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 119 ms
-2026-11-26T17:15:24.854-03:00  INFO 13368 --- [money-trail-api] [           main] c.m.a.r.RevenueTypeAcceptanceTest        : Started RevenueTypeAcceptanceTest in 11.58 seconds (process running for 12.833)
+2026-11-26T17:37:12.654-03:00  INFO 34728 --- [money-trail-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-26T17:37:12.788-03:00  INFO 34728 --- [money-trail-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-26T17:37:13.327-03:00  INFO 34728 --- [money-trail-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-26T17:37:16.596-03:00  INFO 34728 --- [money-trail-api] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-26T17:37:16.608-03:00  INFO 34728 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-26T17:37:16.656-03:00  INFO 34728 --- [money-trail-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2026-11-26T17:37:16.704-03:00  INFO 34728 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 96 ms
+2026-11-26T17:37:16.965-03:00  INFO 34728 --- [money-trail-api] [           main] c.m.a.r.RevenueTypeAcceptanceTest        : Started RevenueTypeAcceptanceTest in 12.521 seconds (process running for 13.744)
 Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
 WARNING: A Java agent has been loaded dynamically (C:\Users\joaob\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.17\byte-buddy-agent-1.18.17.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
 WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
 WARNING: Dynamic loading of agents will be disallowed by default in a future release
 Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+```
+
+`./mvnw -q test -DfailIfNoTests=true -Dtest=RevenueTypeControllerTest#createType_returns201_whenNameTrimsToExac` - exit 0
+
+```
+17:37:30.842 [main] INFO org.hibernate.validator.internal.util.Version -- HV000001: Hibernate Validator 9.1.6.Final
+17:37:31.153 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+17:37:31.155 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+17:37:31.161 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 2 ms
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+WARNING: A Java agent has been loaded dynamically (C:\Users\joaob\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.17\byte-buddy-agent-1.18.17.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+```
+
+`./mvnw -q test -DfailIfNoTests=true -Dtest=RevenueTypeAcceptanceTest#createRevenueType_returns201_whenNameTrim` - exit 0
+
+```
+	Maximum pool size: undefined/unknown
+2026-11-26T17:37:51.396-03:00  INFO 30028 --- [money-trail-api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-26T17:37:51.552-03:00  INFO 30028 --- [money-trail-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-26T17:37:52.132-03:00  INFO 30028 --- [money-trail-api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-26T17:37:55.565-03:00  INFO 30028 --- [money-trail-api] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-26T17:37:55.574-03:00  INFO 30028 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-26T17:37:55.590-03:00  INFO 30028 --- [money-trail-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2026-11-26T17:37:55.628-03:00  INFO 30028 --- [money-trail-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 54 ms
+2026-11-26T17:37:55.849-03:00  INFO 30028 --- [money-trail-api] [           main] c.m.a.r.RevenueTypeAcceptanceTest        : Started RevenueTypeAcceptanceTest in 13.114 seconds (process running for 14.336)
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+WARNING: A Java agent has been loaded dynamically (C:\Users\joaob\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.17\byte-buddy-agent-1.18.17.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
 ```
