@@ -200,9 +200,9 @@ package so later features can reuse it)
 
 **Done when**:
 
-- [ ] `GlobalExceptionHandler` has one `@ExceptionHandler` per exception from T4, returning the
+- [x] `GlobalExceptionHandler` has one `@ExceptionHandler` per exception from T4, returning the
       correct status and an `ApiError` body
-- [ ] `./mvnw -B verify` passes
+- [x] `./mvnw -B verify` passes
 
 **Tests**: none (exercised by T8's controller tests, which trigger each exception through the
 mocked service and assert the resulting status + body)
