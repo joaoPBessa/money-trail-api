@@ -181,8 +181,8 @@ rule) - the only domain-only rule is name uniqueness; blank/length checks are pu
 
 **Done when**:
 
-- [ ] Both exceptions exist with a single `String message` constructor
-- [ ] `./mvnw -B verify` passes
+- [x] Both exceptions exist with a single `String message` constructor
+- [x] `./mvnw -B verify` passes
 
 **Tests**: none (exercised by T7's service tests asserting the exception is thrown, and by T8's
 controller tests asserting the HTTP mapping)
