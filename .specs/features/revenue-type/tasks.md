@@ -130,10 +130,10 @@ callers).
 
 **Done when**:
 
-- [ ] Entity maps every column from T1's migration with `ddl-auto: validate` passing (no schema
+- [x] Entity maps every column from T1's migration with `ddl-auto: validate` passing (no schema
       mismatch)
-- [ ] `id` has no public setter the application code can call with a client-supplied value
-- [ ] `./mvnw -B verify` passes
+- [x] `id` has no public setter the application code can call with a client-supplied value
+- [x] `./mvnw -B verify` passes
 
 **Tests**: none (build gate only)
 **Gate**: build
