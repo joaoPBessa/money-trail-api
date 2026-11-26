@@ -36,3 +36,6 @@ build/
 
 ### Environment ###
 .env
+
+### Claude Code ###
+.agents/
