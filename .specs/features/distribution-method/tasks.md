@@ -173,8 +173,8 @@ tests and the Build gate)
 
 **Done when**:
 
-- [ ] All three exceptions exist with a single `String message` constructor
-- [ ] `./mvnw -B verify` passes
+- [x] All three exceptions exist with a single `String message` constructor
+- [x] `./mvnw -B verify` passes
 
 **Tests**: none (exercised by T7's service tests asserting the exception is thrown, and by T8's
 controller tests asserting the HTTP mapping - this is a merge-forward: the types can't be
