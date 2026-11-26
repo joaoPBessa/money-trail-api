@@ -148,8 +148,8 @@ constraints for `0 <= spend_percentage <= 100`, `0 <= investment_percentage <= 1
 
 **Done when**:
 
-- [ ] The three derived query methods compile against the entity from T2
-- [ ] `./mvnw -B verify` passes
+- [x] The three derived query methods compile against the entity from T2
+- [x] `./mvnw -B verify` passes
 
 **Tests**: none (thin Spring Data derived queries; exercised via T7's mocked-repository unit
 tests and the Build gate)
