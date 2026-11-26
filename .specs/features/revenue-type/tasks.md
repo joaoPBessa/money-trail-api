@@ -262,11 +262,11 @@ rows - they are handled identically to any other row.
 
 **Done when**:
 
-- [ ] Every branch in **What** has a passing unit test in `RevenueTypeServiceTest`, with the
+- [x] Every branch in **What** has a passing unit test in `RevenueTypeServiceTest`, with the
       repository mocked via Mockito and every `verify(...)` call using an explicit argument or an
       `ArgumentCaptor` - never `any()`
-- [ ] Test count: 12 tests pass (S1-S12 below; no silent deletions)
-- [ ] `./mvnw -q test -Dtest=RevenueTypeServiceTest` passes
+- [x] Test count: 12 tests pass (S1-S12 below; no silent deletions)
+- [x] `./mvnw -q test -Dtest=RevenueTypeServiceTest` passes
 
 **Tests**: unit
 **Gate**: quick
