@@ -281,13 +281,13 @@ delegating to `DistributionMethodService` and mapping `DistributionMethodRequest
 
 **Done when**:
 
-- [ ] All 5 endpoints exist with the exact status codes from the spec's AC 1-13
-- [ ] Every endpoint has a passing unit test in `DistributionMethodControllerTest` (MockMvc +
+- [x] All 5 endpoints exist with the exact status codes from the spec's AC 1-13
+- [x] Every endpoint has a passing unit test in `DistributionMethodControllerTest` (MockMvc +
       Mockito-mocked service), with every `verify(...)` call using an explicit argument or an
       `ArgumentCaptor` - never `any()`
-- [ ] Test count: 14 tests pass (C1-C14 below; no silent deletions)
-- [ ] `./mvnw -q test -Dtest=DistributionMethodControllerTest` passes
-- [ ] `./mvnw -B verify` passes (full build gate, end of Phase 2)
+- [x] Test count: 14 tests pass (checks C14-C22 below; no silent deletions)
+- [x] `./mvnw -q test -Dtest=DistributionMethodControllerTest` passes
+- [x] `./mvnw -B verify` passes (full build gate, end of Phase 2)
 
 **Tests**: unit
 **Gate**: quick, then build (phase completion)
@@ -380,9 +380,14 @@ Proof: run controller | ✔ deleteMethod_returns204_whenServiceSucceeds()
 
 The feature's live state, written as it happens - a compaction gives no warning.
 
-**Settled mid-build:** none yet - tasks not started
+**Settled mid-build:** T8 discovered `pom.xml` had no JSON support at all -
+`spring-boot-starter-webmvc` does not pull it in, unlike the classic `spring-boot-starter-web`.
+Added `org.springframework.boot:spring-boot-starter-jackson` (the Boot 4 artifact name; Jackson
+itself moved to the `tools.jackson.databind` package in this version, not
+`com.fasterxml.jackson.databind`) - a one-line dependency fix required for the controller to
+return JSON at all, not a scope expansion.
 **Dispatched:** none - single batch (8 tasks), executed inline, no sub-agents
-**Walked:** none yet
+**Walked:** none - no screen in this feature (REST API only)
 
 ---
 
