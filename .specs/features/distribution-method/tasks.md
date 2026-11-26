@@ -255,11 +255,11 @@ exist for `findById`/`update`/`delete` (else `DistributionMethodNotFoundExceptio
 
 **Done when**:
 
-- [ ] Every branch in **What** has a passing unit test in `DistributionMethodServiceTest`, with
+- [x] Every branch in **What** has a passing unit test in `DistributionMethodServiceTest`, with
       the repository mocked via Mockito and every `verify(...)` call using an explicit argument or
       an `ArgumentCaptor` - never `any()`
-- [ ] Test count: 13 tests pass (S1-S13 below; no silent deletions)
-- [ ] `./mvnw -q test -Dtest=DistributionMethodServiceTest` passes
+- [x] Test count: 13 tests pass (S1-S13 below; no silent deletions)
+- [x] `./mvnw -q test -Dtest=DistributionMethodServiceTest` passes
 
 **Tests**: unit
 **Gate**: quick
