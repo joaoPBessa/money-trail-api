@@ -226,9 +226,9 @@ mocked service and assert the resulting status + body)
 
 **Done when**:
 
-- [ ] `DistributionMethodRequest` carries the bean-validation annotations listed above
-- [ ] `DistributionMethodResponse` exposes every field a client needs to display the method
-- [ ] `./mvnw -B verify` passes
+- [x] `DistributionMethodRequest` carries the bean-validation annotations listed above
+- [x] `DistributionMethodResponse` exposes every field a client needs to display the method
+- [x] `./mvnw -B verify` passes
 
 **Tests**: none (the bean-validation annotations are exercised by T8's controller tests, which
 assert the resulting 400)
