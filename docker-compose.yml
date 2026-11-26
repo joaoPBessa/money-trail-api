@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: money-trail-postgres
+    environment:
+      POSTGRES_DB: money_trail
+      POSTGRES_USER: money_trail
+      POSTGRES_PASSWORD: money_trail
+    ports:
+      - "5432:5432"
+    volumes:
+      - money-trail-postgres-data:/var/lib/postgresql/data
+
+volumes:
+  money-trail-postgres-data:
