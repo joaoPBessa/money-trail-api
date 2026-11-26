@@ -155,8 +155,8 @@ callers).
 
 **Done when**:
 
-- [ ] The three derived query methods compile against the entity from T2
-- [ ] `./mvnw -B verify` passes
+- [x] The three derived query methods compile against the entity from T2
+- [x] `./mvnw -B verify` passes
 
 **Tests**: none (thin Spring Data derived queries; exercised via T7's mocked-repository unit tests
 and T9's acceptance suite)
