@@ -234,9 +234,9 @@ only field on the request - there is no `id` field, so a client-supplied id has 
 
 **Done when**:
 
-- [ ] `RevenueTypeRequest` carries the bean-validation annotations listed above
-- [ ] `RevenueTypeResponse` exposes every field a client needs to display the type
-- [ ] `./mvnw -B verify` passes
+- [x] `RevenueTypeRequest` carries the bean-validation annotations listed above
+- [x] `RevenueTypeResponse` exposes every field a client needs to display the type
+- [x] `./mvnw -B verify` passes
 
 **Tests**: none (the bean-validation annotations are exercised by T8's controller tests and T9's
 acceptance suite, which assert the resulting 400)
