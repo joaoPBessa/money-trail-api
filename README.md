@@ -10,6 +10,7 @@ overall cash flow.
 - **PostgreSQL** as the primary database
 - **Flyway** for database migrations
 - **Maven** (with the Maven Wrapper, `mvnw`) as the build tool
+- **Spring Boot DevTools** for hot reload during development
 
 ## Prerequisites
 
@@ -40,6 +41,15 @@ overall cash flow.
    `src/main/resources/db/migration`.
 
 3. The application exposes health/info endpoints under `/actuator`.
+
+### Hot reload
+
+Spring Boot DevTools is included for local development. It automatically
+restarts the application whenever a compiled class on the classpath
+changes. With `./mvnw spring-boot:run`, recompile the project from your IDE
+(or run `./mvnw compile` in another terminal) and DevTools picks up the
+change and restarts automatically — no need to stop and rerun the app.
+DevTools is excluded from the packaged production artifact automatically.
 
 ### Configuration
 
