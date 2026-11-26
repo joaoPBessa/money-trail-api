@@ -320,11 +320,11 @@ that talks to a real database
 
 **Done when**:
 
-- [ ] Postgres is reachable (`docker-compose up -d` locally; already provided as a CI service) and
+- [x] Postgres is reachable (`docker-compose up -d` locally; already provided as a CI service) and
       `./mvnw -q test -Dtest=RevenueTypeAcceptanceTest` passes against it
-- [ ] Every scenario in **What** has a passing test, named A1-A15 below (no silent deletions):
+- [x] Every scenario in **What** has a passing test, named A1-A15 below (no silent deletions):
       Test count: 15 tests pass
-- [ ] `./mvnw -B verify` passes (full build gate, end of Phase 3 - feature complete)
+- [x] `./mvnw -B verify` passes (full build gate, end of Phase 3 - feature complete)
 
 **Tests**: acceptance (e2e)
 **Gate**: acceptance, then build (phase completion)
@@ -479,9 +479,12 @@ Proof: `./mvnw -q test -DfailIfNoTests=true -Dtest=RevenueTypeAcceptanceTest#del
 
 The feature's live state, written as it happens - a compaction gives no warning.
 
-**Settled mid-build:** none yet
+**Settled mid-build:** T9 discovered `@AutoConfigureMockMvc` lives at
+`org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc` in Spring Boot 4.2's
+modular test starters, not the classic `org.springframework.boot.test.autoconfigure.web.servlet`
+package - a one-line import fix, not a scope change.
 **Dispatched:** none yet
-**Walked:** none yet (REST API only, no screens)
+**Walked:** none (REST API only, no screens)
 
 ---
 
