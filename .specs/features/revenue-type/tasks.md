@@ -483,7 +483,8 @@ The feature's live state, written as it happens - a compaction gives no warning.
 `org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc` in Spring Boot 4.2's
 modular test starters, not the classic `org.springframework.boot.test.autoconfigure.web.servlet`
 package - a one-line import fix, not a scope change.
-**Dispatched:** none yet
+**Dispatched:** Verifier at HEAD 62d9ad1 (no capture cited anywhere in this feature, so no screens
+sub-agent)
 **Walked:** none (REST API only, no screens)
 
 ---
