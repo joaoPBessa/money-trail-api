@@ -21,8 +21,7 @@ controller), no architectural decision to record.
 **Status**: Approved
 **Approved**: 2026-11-26 - user: "Aprovar, pode implementar"
 **Build**: `./mvnw -B verify`
-**Run service**: `./mvnw -q test -Dtest=DistributionMethodServiceTest`
-**Run controller**: `./mvnw -q test -Dtest=DistributionMethodControllerTest`
+**All tests**: `./mvnw -q test -Dtest=DistributionMethodServiceTest,DistributionMethodControllerTest`
 
 ---
 
@@ -298,81 +297,86 @@ delegating to `DistributionMethodService` and mapping `DistributionMethodRequest
 
 ## Checks
 
-**Run service**: `./mvnw -q test -Dtest=DistributionMethodServiceTest`
-**Run controller**: `./mvnw -q test -Dtest=DistributionMethodControllerTest`
 **Build**: `./mvnw -B verify`
+
+**Note on proofs:** Maven Surefire here prints no per-test console line on a pass (only a
+per-class summary), so a shared `Run <name> | <printed line>` proof is not available. Each check
+below is instead a lone proof targeting exactly one test method with
+`-Dtest=Class#method -DfailIfNoTests=true`: this flag makes Maven fail (non-zero exit) when the
+filter matches no test, so a renamed or typo'd method name is caught - the exit code alone is then
+a trustworthy pass/fail signal, same guarantee the shared-line form exists to provide.
 
 **C1** - Creating a method with a unique title and percentages summing to 100 is saved with a
 server-generated id (DIST-01, AC 1, AC 14)
-Proof: run service | ✔ create_savesAndReturnsMethod_whenValidAndTitleUnique()
+Proof: `./mvnw -q test -DfailIfNoTests=true -Dtest=DistributionMethodServiceTest#create_savesAndReturnsMethod_whenValidAndTitleUnique`
 
 **C2** - Percentages not summing to 100 are rejected before persistence, on create (DIST-01, AC 4)
-Proof: run service | ✔ create_throwsInvalid_whenPercentagesDoNotSumTo100()
+Proof: `./mvnw -q test -DfailIfNoTests=true -Dtest=DistributionMethodServiceTest#create_throwsInvalid_whenPercentagesDoNotSumTo100`
 
 **C3** - A title matching an existing one case-insensitively is rejected on create (DIST-01, AC 5)
-Proof: run service | ✔ create_throwsDuplicate_whenTitleExistsCaseInsensitive()
+Proof: `./mvnw -q test -DfailIfNoTests=true -Dtest=DistributionMethodServiceTest#create_throwsDuplicate_whenTitleExistsCaseInsensitive`
 
 **C4** - Listing returns every method ordered by `createdAt` ascending (DIST-02, AC 6)
-Proof: run service | ✔ findAll_returnsAllOrderedByCreatedAtAscending()
+Proof: `./mvnw -q test -DfailIfNoTests=true -Dtest=DistributionMethodServiceTest#findAll_returnsAllOrderedByCreatedAtAscending`
 
 **C5** - Fetching an existing id returns that method (DIST-03, AC 7)
-Proof: run service | ✔ findById_returnsMethod_whenExists()
+Proof: `./mvnw -q test -DfailIfNoTests=true -Dtest=DistributionMethodServiceTest#findById_returnsMethod_whenExists`
 
 **C6** - Fetching a missing id raises not-found (DIST-03, AC 8)
-Proof: run service | ✔ findById_throwsNotFound_whenIdMissing()
+Proof: `./mvnw -q test -DfailIfNoTests=true -Dtest=DistributionMethodServiceTest#findById_throwsNotFound_whenIdMissing`
 
 **C7** - Updating an existing method with a valid body saves the new values (DIST-04, AC 9)
-Proof: run service | ✔ update_savesChangesAndReturnsMethod_whenExistsAndValid()
+Proof: `./mvnw -q test -DfailIfNoTests=true -Dtest=DistributionMethodServiceTest#update_savesChangesAndReturnsMethod_whenExistsAndValid`
 
 **C8** - Updating a missing id raises not-found, nothing is saved (DIST-04, AC 10)
-Proof: run service | ✔ update_throwsNotFound_whenIdMissing()
+Proof: `./mvnw -q test -DfailIfNoTests=true -Dtest=DistributionMethodServiceTest#update_throwsNotFound_whenIdMissing`
 
 **C9** - Updating to a title used by a *different* method raises duplicate (DIST-04, AC 11)
-Proof: run service | ✔ update_throwsDuplicate_whenTitleUsedByDifferentMethod()
+Proof: `./mvnw -q test -DfailIfNoTests=true -Dtest=DistributionMethodServiceTest#update_throwsDuplicate_whenTitleUsedByDifferentMethod`
 
 **C10** - Updating a method while keeping its own current title is accepted, not a duplicate of
 itself (DIST-04, Edge Cases)
-Proof: run service | ✔ update_allowsSameMethodKeepingItsOwnTitle()
+Proof: `./mvnw -q test -DfailIfNoTests=true -Dtest=DistributionMethodServiceTest#update_allowsSameMethodKeepingItsOwnTitle`
 
 **C11** - Updating with percentages not summing to 100 is rejected (DIST-04, AC 4)
-Proof: run service | ✔ update_throwsInvalid_whenPercentagesDoNotSumTo100()
+Proof: `./mvnw -q test -DfailIfNoTests=true -Dtest=DistributionMethodServiceTest#update_throwsInvalid_whenPercentagesDoNotSumTo100`
 
 **C12** - Deleting an existing method removes it (DIST-05, AC 12)
-Proof: run service | ✔ delete_removesMethod_whenExists()
+Proof: `./mvnw -q test -DfailIfNoTests=true -Dtest=DistributionMethodServiceTest#delete_removesMethod_whenExists`
 
 **C13** - Deleting a missing id raises not-found (DIST-05, AC 13)
-Proof: run service | ✔ delete_throwsNotFound_whenIdMissing()
+Proof: `./mvnw -q test -DfailIfNoTests=true -Dtest=DistributionMethodServiceTest#delete_throwsNotFound_whenIdMissing`
 
 **C14** - `POST` with a valid body responds 201 with a `Location` header pointing at the created
 resource (DIST-01, AC 1)
-Proof: run controller | ✔ createMethod_returns201WithLocationHeader_whenServiceSucceeds()
+Proof: `./mvnw -q test -DfailIfNoTests=true -Dtest=DistributionMethodControllerTest#createMethod_returns201WithLocationHeader_whenServiceSucceeds`
 
 **C15** - `POST`/`PUT` with a blank title responds 400 (DIST-01/04, AC 2)
-Proof: run controller | ✔ createMethod_returns400_whenTitleBlank()
+Proof: `./mvnw -q test -DfailIfNoTests=true -Dtest=DistributionMethodControllerTest#createMethod_returns400_whenTitleBlank`
 
 **C16** - `POST`/`PUT` with an out-of-range percentage responds 400 (DIST-01/04, AC 3)
-Proof: run controller | ✔ createMethod_returns400_whenPercentageOutOfRange()
+Proof: `./mvnw -q test -DfailIfNoTests=true -Dtest=DistributionMethodControllerTest#createMethod_returns400_whenPercentageOutOfRange`
 
 **C17** - `POST` responds 400 when the service rejects the percentage sum (DIST-01, AC 4)
-Proof: run controller | ✔ createMethod_returns400_whenServiceThrowsInvalid()
+Proof: `./mvnw -q test -DfailIfNoTests=true -Dtest=DistributionMethodControllerTest#createMethod_returns400_whenServiceThrowsInvalid`
 
 **C18** - `POST` responds 409 when the service rejects a duplicate title (DIST-01, AC 5)
-Proof: run controller | ✔ createMethod_returns409_whenServiceThrowsDuplicate()
+Proof: `./mvnw -q test -DfailIfNoTests=true -Dtest=DistributionMethodControllerTest#createMethod_returns409_whenServiceThrowsDuplicate`
 
 **C19** - `GET` (list) responds 200 with every method, and with an empty array when none exist
 (DIST-02, AC 6)
-Proof: run controller | ✔ listMethods_returns200WithEmptyArray_whenNoneExist()
+Proof: `./mvnw -q test -DfailIfNoTests=true -Dtest=DistributionMethodControllerTest#listMethods_returns200WithEmptyArray_whenNoneExist`
 
 **C20** - `GET /{id}` responds 200 with the method when it exists, 404 when it doesn't (DIST-03,
 AC 7, AC 8)
-Proof: run controller | ✔ getMethod_returns404_whenServiceThrowsNotFound()
+Proof: `./mvnw -q test -DfailIfNoTests=true -Dtest=DistributionMethodControllerTest#getMethod_returns404_whenServiceThrowsNotFound`
 
 **C21** - `PUT /{id}` responds 200 with the updated method, 404 when missing, 409 on duplicate
 (DIST-04, AC 9, 10, 11)
-Proof: run controller | ✔ updateMethod_returns200WithUpdatedBody_whenServiceSucceeds()
+Proof: `./mvnw -q test -DfailIfNoTests=true -Dtest=DistributionMethodControllerTest#updateMethod_returns200WithUpdatedBody_whenServiceSucceeds`
 
 **C22** - `DELETE /{id}` responds 204 when it exists, 404 when missing (DIST-05, AC 12, AC 13)
-Proof: run controller | ✔ deleteMethod_returns204_whenServiceSucceeds()
+Proof: `./mvnw -q test -DfailIfNoTests=true -Dtest=DistributionMethodControllerTest#deleteMethod_returns204_whenServiceSucceeds`
 
 ---
 
