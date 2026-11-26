@@ -80,6 +80,19 @@ class RevenueTypeControllerTest {
     }
 
     @Test
+    void createType_returns201_whenNameTrimsToExactly100Chars() throws Exception {
+        String trimmedName = "a".repeat(100);
+        RevenueType created = new RevenueType(trimmedName);
+        when(service.create(trimmedName)).thenReturn(created);
+
+        mockMvc.perform(post(BASE_URL)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(new Request(" " + trimmedName + " "))))
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.name").value(trimmedName));
+    }
+
+    @Test
     void createType_returns409_whenServiceThrowsDuplicate() throws Exception {
         when(service.create("Prêmio"))
                 .thenThrow(new DuplicateRevenueTypeNameException("name already exists"));

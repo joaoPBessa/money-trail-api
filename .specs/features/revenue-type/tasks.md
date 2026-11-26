@@ -292,7 +292,8 @@ to `RevenueTypeService` and mapping `RevenueTypeRequest` / `RevenueTypeResponse`
       Mockito-mocked service, no Spring context - same style as
       `DistributionMethodControllerTest`), with every `verify(...)` call using an explicit
       argument or an `ArgumentCaptor` - never `any()`
-- [x] Test count: 13 tests pass (C1-C13 below; no silent deletions)
+- [x] Test count: 14 tests pass (C13-C25 plus the verification-round boundary test C41; no silent
+      deletions)
 - [x] `./mvnw -q test -Dtest=RevenueTypeControllerTest` passes
 - [x] `./mvnw -B verify` passes (full build gate, end of Phase 2)
 
@@ -322,8 +323,8 @@ that talks to a real database
 
 - [x] Postgres is reachable (`docker-compose up -d` locally; already provided as a CI service) and
       `./mvnw -q test -Dtest=RevenueTypeAcceptanceTest` passes against it
-- [x] Every scenario in **What** has a passing test, named A1-A15 below (no silent deletions):
-      Test count: 15 tests pass
+- [x] Every scenario in **What** has a passing test, named A1-A15 below plus the
+      verification-round boundary test C42 (no silent deletions): Test count: 16 tests pass
 - [x] `./mvnw -B verify` passes (full build gate, end of Phase 3 - feature complete)
 
 **Tests**: acceptance (e2e)
@@ -473,6 +474,16 @@ Proof: `./mvnw -q test -DfailIfNoTests=true -Dtest=RevenueTypeAcceptanceTest#del
 Edge Cases)
 Proof: `./mvnw -q test -DfailIfNoTests=true -Dtest=RevenueTypeAcceptanceTest#deleteASeededType_isAcceptedWithNoProtection`
 
+### Verification-round additions (Verifier finding 1, round 1)
+
+**C41** - A name that is over 100 raw characters but exactly 100 after trim is accepted, not
+rejected (REV-01/04, Edge Cases - the "exactly 100 after trim" boundary)
+Proof: `./mvnw -q test -DfailIfNoTests=true -Dtest=RevenueTypeControllerTest#createType_returns201_whenNameTrimsToExactly100Chars`
+
+**C42** - Same boundary, end-to-end: the trimmed (not raw) name is what gets persisted (REV-01,
+Edge Cases)
+Proof: `./mvnw -q test -DfailIfNoTests=true -Dtest=RevenueTypeAcceptanceTest#createRevenueType_returns201_whenNameTrimsToExactly100Chars`
+
 ---
 
 ## Handoff
@@ -484,7 +495,12 @@ The feature's live state, written as it happens - a compaction gives no warning.
 modular test starters, not the classic `org.springframework.boot.test.autoconfigure.web.servlet`
 package - a one-line import fix, not a scope change.
 **Dispatched:** Verifier at HEAD 62d9ad1 (no capture cited anywhere in this feature, so no screens
-sub-agent)
+sub-agent) - **returned**, verdict FAIL, 2 findings (see verification.md), fixed in one pass: (1)
+`RevenueTypeRequest`'s `@Size(max=100)` validated the raw untrimmed value instead of the
+after-trim value, so a name over 100 raw chars but exactly 100 after trim was wrongly rejected -
+fixed by trimming in the record's compact constructor, before Bean Validation runs; added C41
+(controller) and C42 (acceptance) to prove it. (2) C35's test asserted only the 404 status, not
+its own "nothing created" claim - added the missing `repository.count()` assertion.
 **Walked:** none (REST API only, no screens)
 
 ---

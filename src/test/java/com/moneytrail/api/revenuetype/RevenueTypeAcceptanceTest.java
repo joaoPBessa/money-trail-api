@@ -93,6 +93,22 @@ class RevenueTypeAcceptanceTest {
     }
 
     @Test
+    void createRevenueType_returns201_whenNameTrimsToExactly100Chars() throws Exception {
+        String trimmedName = "a".repeat(100);
+
+        MvcResult result = mockMvc.perform(post(BASE_URL)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(new Request(" " + trimmedName + " "))))
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.name").value(trimmedName))
+                .andReturn();
+
+        String location = result.getResponse().getHeader("Location");
+        UUID id = UUID.fromString(location.substring((BASE_URL + "/").length()));
+        assertThat(repository.findById(id).orElseThrow().getName()).isEqualTo(trimmedName);
+    }
+
+    @Test
     void createRevenueType_returns409_whenNameDuplicatesExistingCaseInsensitive() throws Exception {
         long countBefore = repository.count();
 
@@ -146,10 +162,14 @@ class RevenueTypeAcceptanceTest {
 
     @Test
     void updateRevenueType_returns404_whenIdMissing() throws Exception {
+        long countBefore = repository.count();
+
         mockMvc.perform(put(BASE_URL + "/" + UUID.randomUUID())
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(new Request("Novo Nome"))))
                 .andExpect(status().isNotFound());
+
+        assertThat(repository.count()).isEqualTo(countBefore);
     }
 
     @Test
