@@ -367,16 +367,34 @@ Proof: `./mvnw -q test -DfailIfNoTests=true -Dtest=DistributionMethodControllerT
 (DIST-02, AC 6)
 Proof: `./mvnw -q test -DfailIfNoTests=true -Dtest=DistributionMethodControllerTest#listMethods_returns200WithEmptyArray_whenNoneExist`
 
-**C20** - `GET /{id}` responds 200 with the method when it exists, 404 when it doesn't (DIST-03,
-AC 7, AC 8)
+**C20** - `GET /{id}` responds 404 when the id doesn't exist (DIST-03, AC 8)
 Proof: `./mvnw -q test -DfailIfNoTests=true -Dtest=DistributionMethodControllerTest#getMethod_returns404_whenServiceThrowsNotFound`
 
-**C21** - `PUT /{id}` responds 200 with the updated method, 404 when missing, 409 on duplicate
-(DIST-04, AC 9, 10, 11)
+**C21** - `PUT /{id}` responds 200 with the updated method when it succeeds (DIST-04, AC 9)
 Proof: `./mvnw -q test -DfailIfNoTests=true -Dtest=DistributionMethodControllerTest#updateMethod_returns200WithUpdatedBody_whenServiceSucceeds`
 
-**C22** - `DELETE /{id}` responds 204 when it exists, 404 when missing (DIST-05, AC 12, AC 13)
+**C22** - `DELETE /{id}` responds 204 when the id exists (DIST-05, AC 12)
 Proof: `./mvnw -q test -DfailIfNoTests=true -Dtest=DistributionMethodControllerTest#deleteMethod_returns204_whenServiceSucceeds`
+
+**C23** - `GET /{id}` responds 200 with the method when the id exists (DIST-03, AC 7)
+Proof: `./mvnw -q test -DfailIfNoTests=true -Dtest=DistributionMethodControllerTest#getMethod_returns200WithBody_whenExists`
+
+**C24** - `PUT /{id}` responds 404 when the id doesn't exist (DIST-04, AC 10)
+Proof: `./mvnw -q test -DfailIfNoTests=true -Dtest=DistributionMethodControllerTest#updateMethod_returns404_whenServiceThrowsNotFound`
+
+**C25** - `PUT /{id}` responds 409 when the service rejects a duplicate title (DIST-04, AC 11)
+Proof: `./mvnw -q test -DfailIfNoTests=true -Dtest=DistributionMethodControllerTest#updateMethod_returns409_whenServiceThrowsDuplicate`
+
+**C26** - `DELETE /{id}` responds 404 when the id doesn't exist (DIST-05, AC 13)
+Proof: `./mvnw -q test -DfailIfNoTests=true -Dtest=DistributionMethodControllerTest#deleteMethod_returns404_whenServiceThrowsNotFound`
+
+**C27** - Percentages outside 0-100 are rejected by the service even when they sum to 100
+(DIST-01/04, AC 3)
+Proof: `./mvnw -q test -DfailIfNoTests=true -Dtest=DistributionMethodServiceTest#create_throwsInvalid_whenPercentageOutOfRangeEvenIfSumIs100`
+
+**C28** - A title differing only by leading/trailing whitespace is treated as the same title for
+the uniqueness check (DIST-01, Edge Cases)
+Proof: `./mvnw -q test -DfailIfNoTests=true -Dtest=DistributionMethodServiceTest#create_throwsDuplicate_whenTitleDiffersOnlyByWhitespace`
 
 ---
 
@@ -390,7 +408,8 @@ Added `org.springframework.boot:spring-boot-starter-jackson` (the Boot 4 artifac
 itself moved to the `tools.jackson.databind` package in this version, not
 `com.fasterxml.jackson.databind`) - a one-line dependency fix required for the controller to
 return JSON at all, not a scope expansion.
-**Dispatched:** none - single batch (8 tasks), executed inline, no sub-agents
+**Dispatched:** Verifier at HEAD 5a995b7 (no capture cited anywhere in this feature, so no screens
+sub-agent)
 **Walked:** none - no screen in this feature (REST API only)
 
 ---

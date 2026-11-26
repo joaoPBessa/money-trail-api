@@ -67,6 +67,24 @@ class DistributionMethodServiceTest {
     }
 
     @Test
+    void create_throwsInvalid_whenPercentageOutOfRangeEvenIfSumIs100() {
+        assertThrows(InvalidDistributionMethodException.class, () -> service.create("90/10", -50, 150));
+
+        verifyNoInteractions(repository);
+    }
+
+    @Test
+    void create_throwsDuplicate_whenTitleDiffersOnlyByWhitespace() {
+        when(repository.existsByTitleIgnoreCase("90/10")).thenReturn(true);
+
+        assertThrows(DuplicateDistributionMethodTitleException.class,
+                () -> service.create("  90/10  ", 90, 10));
+
+        verify(repository).existsByTitleIgnoreCase("90/10");
+        verifyNoMoreInteractions(repository);
+    }
+
+    @Test
     void findAll_returnsAllOrderedByCreatedAtAscending() {
         DistributionMethod first = new DistributionMethod("90/10", 90, 10);
         DistributionMethod second = new DistributionMethod("80/20", 80, 20);
