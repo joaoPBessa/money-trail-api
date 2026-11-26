@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "promote_threshold": 2,
+  "window_days": 45,
+  "quarantine_threshold": 2,
+  "next_id": 4,
+  "lessons": [
+    {
+      "id": "L-001",
+      "key": "weak_test::when a check s one line claim bundles multiple http status codes for one endpoint cite one test per status code one check per branch instead of a single proof a single proof only covers the branch its named test exercises",
+      "text": "When a check's one-line claim bundles multiple HTTP status codes for one endpoint, cite one test per status code (one check per branch) instead of a single proof - a single proof only covers the branch its named test exercises.",
+      "signal": "weak_test",
+      "scope": "api/checks",
+      "status": "candidate",
+      "features": [
+        "distribution-method"
+      ],
+      "recurrence": 1,
+      "harmful": 0,
+      "evidence": [
+        "C20,C21,C22 (api/checks)"
+      ],
+      "created": "2026-11-26T17:49:29Z",
+      "last_seen": "2026-11-26T17:49:29Z"
+    },
+    {
+      "id": "L-002",
+      "key": "ac_gap::a uniqueness rule stated as case insensitive in the spec s edge cases often also implies whitespace insensitive trim before comparing and before persisting write that test explicitly it is easy to miss",
+      "text": "A uniqueness rule stated as case-insensitive in the spec's Edge Cases often also implies whitespace-insensitive (trim before comparing and before persisting) - write that test explicitly, it is easy to miss.",
+      "signal": "ac_gap",
+      "scope": "domain/validation",
+      "status": "candidate",
+      "features": [
+        "distribution-method"
+      ],
+      "recurrence": 1,
+      "harmful": 0,
+      "evidence": [
+        "AC5,AC11 (domain/validation)"
+      ],
+      "created": "2026-11-26T17:49:29Z",
+      "last_seen": "2026-11-26T17:49:29Z"
+    },
+    {
+      "id": "L-003",
+      "key": "ac_gap::a business rule enforced only by the dto s bean validation e g min max is not enforced for callers that reach the service directly duplicate range bound checks at the service layer too not just at the controller boundary",
+      "text": "A business rule enforced only by the DTO's bean validation (e.g. @Min/@Max) is not enforced for callers that reach the service directly - duplicate range/bound checks at the service layer too, not just at the controller boundary.",
+      "signal": "ac_gap",
+      "scope": "domain/validation",
+      "status": "candidate",
+      "features": [
+        "distribution-method"
+      ],
+      "recurrence": 1,
+      "harmful": 0,
+      "evidence": [
+        "AC3 (domain/validation)"
+      ],
+      "created": "2026-11-26T17:49:29Z",
+      "last_seen": "2026-11-26T17:49:29Z"
+    }
+  ]
+}
