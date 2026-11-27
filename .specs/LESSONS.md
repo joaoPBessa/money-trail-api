@@ -32,6 +32,18 @@ Seen once or not yet corroborated. Tracked, not trusted.
 - evidence: AC3 (domain/validation)
 - last seen: 2026-11-26T17:49:29Z
 
+### L-004 - When a field is trimmed before persistence, apply length/size bean-validation (@Size) to the trimmed value, not the raw request value - e.g. trim in the DTO's constructor before validation runs, not only in the service layer.
+- signal: `ac_gap` · recurrence: 1 feature(s) · scope: `domain/validation` · harmful: 0
+- features: revenue-type
+- evidence: RevenueTypeRequest.java:6 (domain/validation)
+- last seen: 2026-11-26T20:39:20Z
+
+### L-005 - A test proving a rejected write 'persisted nothing' must assert the row count (or absence of the record) explicitly, not just the HTTP status code - a 404/400 status alone does not prove nothing was written.
+- signal: `weak_test` · recurrence: 1 feature(s) · scope: `api/checks` · harmful: 0
+- features: revenue-type
+- evidence: C35 (api/checks)
+- last seen: 2026-11-26T20:39:25Z
+
 ## Quarantined (failed when applied - ignore)
 
 A confirmed lesson that recurred alongside failure. Kept for the maintainer to review.
